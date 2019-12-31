@@ -28,10 +28,8 @@ const getCountries = async (currencyCode) => {
 const convertCurrency = async (fromCurrency, toCurrency) => {
 	try {
 	    const enterAmount = document.querySelector('#amount').value;
-	    const unitOfCurrency = document.querySelector('#unitCurrency');
-	    const unitOfValue = document.querySelector('#unitValue');
-	    const fromCurrency = unitOfValue.options[unitOfValue.selectedIndex].value;
-	    const toCurrency = unitOfCurrency.options[unitOfCurrency.selectedIndex].value;
+	    const fromCurrency = document.querySelector('#unitValue').value;
+	    const toCurrency = document.querySelector('#unitCurrency').value;
 
 	    const exchangeRate = await getExchangeRate(fromCurrency, toCurrency);
 	    const countries = await getCountries(toCurrency);
